@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1A2B1E;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background-color: #E0E0E0;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 350px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .login-container img {
+            width: 200px;
+            margin-bottom: 10px;
+        }
+        .login-container h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .input-field {
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            align-items: center;
+        }
+        .login-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #7E8C5D;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .login-btn:hover {
+            background-color: #6B7A4D;
+        }
+        .verify-link {
+            font-size: 14px;
+            margin-top: 15px;
+            color: #4A5E3E;
+            text-decoration: none;
+        }
+        .verify-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function login() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Hardcoded credentials for demonstration purposes
+            var validUsername = 'admin';
+            var validPassword = 'password';
+
+            if (username === validUsername && password === validPassword) {
+                window.location.href = './Admin/dashboard.html'; // Redirect to the admin dashboard
+            } else {
+                alert('Invalid username or password');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <img src="./Asset/mml.png" alt="Makers' Market Logo">
+        <h2>Log in</h2>
+        <input type="text" id="username" class="input-field" placeholder="Username">
+        <input type="password" id="password" class="input-field" placeholder="Password">
+        <button class="login-btn" onclick="login()">Login</button>
+    </div>
+</body>
+</html>
