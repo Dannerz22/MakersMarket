@@ -64,13 +64,22 @@
         function login() {
             var username = document.getElementById('username').value;
             var password = document.getElementById('password').value;
+            var userType = document.getElementById('user-type').value;
 
             // Hardcoded credentials for demonstration purposes
-            var validUsername = 'admin';
-            var validPassword = 'password';
+            var validAdminUsername = 'admin';
+            var validAdminPassword = 'password';
+            var validSellerUsername = 'seller';
+            var validSellerPassword = 'password';
+            var validCustomerUsername = 'customer';
+            var validCustomerPassword = 'password';
 
-            if (username === validUsername && password === validPassword) {
+            if (userType === 'admin' && username === validAdminUsername && password === validAdminPassword) {
                 window.location.href = './Admin/dashboard.html'; // Redirect to the admin dashboard
+            } else if (userType === 'seller' && username === validSellerUsername && password === validSellerPassword) {
+                window.location.href = './Seller/dashboard.html'; // Redirect to the seller dashboard
+            } else if (userType === 'customer' && username === validCustomerUsername && password === validCustomerPassword) {
+                window.location.href = './Customer/Homepage.html'; // Redirect to the customer homepage
             } else {
                 alert('Invalid username or password');
             }
@@ -81,6 +90,11 @@
     <div class="login-container">
         <img src="./Asset/mml.png" alt="Makers' Market Logo">
         <h2>Log in</h2>
+        <select id="user-type" class="input-field">
+            <option value="admin">Admin</option>
+            <option value="seller">Seller</option>
+            <option value="customer">Customer</option>
+        </select>
         <input type="text" id="username" class="input-field" placeholder="Username">
         <input type="password" id="password" class="input-field" placeholder="Password">
         <button class="login-btn" onclick="login()">Login</button>

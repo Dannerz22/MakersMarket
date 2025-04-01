@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Makers' Market - Homepage</title>
+    <style>
+        * {
+            font-family: 'poppins';
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            background-color: #F8F8F8;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #768948;
+            height: 100vh;
+            padding: 20px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            position: -webkit-sticky;
+            position: sticky;
+        }
+        .sidebar img {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .sidebar h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .sidebar .filter-section {
+            margin-bottom: 20px;
+        }
+        .sidebar .filter-section h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .sidebar .filter-section input,
+        .sidebar .filter-section select {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        .sidebar .account-section {
+            margin-top: auto;
+        }
+        .sidebar .account-section a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        .sidebar .account-section a:hover {
+            text-decoration: underline;
+        }
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .hero-section {
+            position: relative;
+            background-image: url('../Asset/background.jpg'); /* Replace with your hero background image */
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        .hero-section h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .hero-section p {
+            font-size: 18px;
+        }
+        .main-content h1 {
+            font-size: 36px;
+            color: #4A5E3E;
+            margin-bottom: 20px;
+        }
+        .main-content .section {
+            margin-bottom: 30px;
+        }
+        .main-content .section h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #4A5E3E;
+        }
+        .main-content .items-grid {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .main-content .item-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            width: calc(25% - 15px);
+            text-align: left;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+                    }
+        .main-content .item-card:hover {
+            transform: scale(1.05);
+        }
+        .main-content .item-card img {
+            width: 100%;
+                        border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .main-content .item-card h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        .main-content .item-card p {
+            font-size: 14px;
+            color: #4A5E3E;
+        }
+        .main-content .item-card .price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #768948;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="../Asset/mml.png" alt="Makers' Market Logo">
+        <h2>NAVIGATION</h2>
+        <div class="filter-section">
+            <h2>FILTER</h2>
+            <h4>CATEGORIES</h4>
+            <select>
+                <option>Tools and Equipment</option>
+                <option>Art Materials</option>
+                <option>Electronics</option>
+                <option>Machines</option>
+                <option>Computer Peripherals</option>
+                <option>Furniture</option>
+                <option>Applications</option>
+                <option>Others</option>
+            </select>
+            <h4>PRICE</h4>
+            <input type="number" placeholder="Min">
+            <input type="number" placeholder="Max">
+            <h4>COLLEGE</h4>
+            <select>
+                <option>Civil Engineering</option>
+                <option>Mechanical Engineering</option>
+                <option>Electronics Engineering</option>
+                <option>Electrical Engineering</option>
+                <option>Computer Engineering</option>
+                <option>Multimedia Arts</option>
+                <option>Industrial Engineering</option>
+            </select>
+        </div>
+        <div class="account-section">
+            <a href="#">Order Status</a>
+            <a href="#">User Profile</a>
+            <a href="#">Settings</a>
+            <a href="../Login.html">Log Out</a>
+        </div>
+    </div>
+    <div class="main-content">
+<div class="hero-section">
+        <h1>BE A MAKER</h1>
+        <p>BUY AND SELL ITEMS HERE</p>
+</div>
+        <div class="section">
+            <h2>FEATURED</h2>
+            <div class="items-grid" id="featured-items">
+                <!-- Featured items will be dynamically added here -->
+            </div>
+        </div>
+        <div class="section">
+            <h2>RECOMMENDED</h2>
+            <div class="items-grid" id="recommended-items">
+                <!-- Recommended items will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data arrays for items
+        const featuredItems = [
+            { name: "CR SIGN", seller: "James", price: "P 1000", image: "../Asset/background.jpg" },
+            { name: "Wooden Frame", seller: "Anna", price: "P 1200", image: "../Asset/../Asset/background.jpg" },
+            { name: "Metal Stand", seller: "John", price: "P 800", image: "../Asset/../Asset/background.jpg" },
+            { name: "Custom Mug", seller: "Sarah", price: "P 500", image: "../Asset/../Asset/background.jpg" }
+        ];
+
+        const recommendedItems = [
+        { name: "CR SIGN", seller: "James", price: "P 1000", image: "../Asset/../Asset/background.jpg" },
+            { name: "Wooden Frame", seller: "Anna", price: "P 1200", image: "../Asset/../Asset/background.jpg" },
+            { name: "Metal Stand", seller: "John", price: "P 800", image: "../Asset/item1.png" },
+    { name: "CR SIGN", seller: "James", price: "P 1000", image: "../Asset/item1.png" },
+            { name: "Wooden Frame", seller: "Anna", price: "P 1200", image: "../Asset/item1.png" },
+            { name: "Metal Stand", seller: "John", price: "P 800", image: "../Asset/item1.png" },
+            { name: "CR SIGN", seller: "James", price: "P 1000", image: "../Asset/item1.png" },
+            { name: "Wooden Frame", seller: "Anna", price: "P 1200", image: "../Asset/item1.png" },
+            { name: "Metal Stand", seller: "John", price: "P 800", image: "../Asset/item1.png" },
+            { name: "Custom Mug", seller: "Sarah", price: "P 500", image: "../Asset/item1.png" }
+        ];
+
+        // Function to render items dynamically
+        function renderItems(containerId, items) {
+            const container = document.getElementById(containerId);
+            items.forEach(item => {
+                const card = document.createElement("div");
+                card.className = "item-card";
+                card.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <h3>${item.name}</h3>
+                    <p>${item.seller}</p>
+                    <p class="price">${item.price}</p>
+                `;
+                card.onclick = () => alert(`You clicked on ${item.name}`);
+                container.appendChild(card);
+            });
+        }
+
+        // Render featured and recommended items
+        renderItems("featured-items", featuredItems);
+        renderItems("recommended-items", recommendedItems);
+    </script>
+</body>
+</html>
